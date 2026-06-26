@@ -448,6 +448,109 @@
 
   .btn-white:hover { background: var(--purple-light); color: var(--purple); }
 
+
+
+  /* ── AULAS PARTICULARES CTA ── */
+  #aulas-particulares-cta {
+    padding: 90px 80px;
+    border-top: 0.5px solid var(--border);
+    background: var(--white);
+  }
+
+  .aulas-cta-card {
+    border: 0.5px solid var(--border);
+    border-radius: 20px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 44px;
+    align-items: center;
+    background: linear-gradient(135deg, var(--gray-light), #fff);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .aulas-cta-card::after {
+    content: '';
+    position: absolute;
+    right: -70px; top: -70px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: var(--purple-light);
+    opacity: 0.9;
+  }
+
+  .aulas-cta-content, .aulas-cta-box { position: relative; z-index: 1; }
+
+  .aulas-cta-title {
+    font-family: 'Nova Square', sans-serif;
+    font-size: clamp(26px, 3vw, 42px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .aulas-cta-title span { color: var(--purple); }
+
+  .aulas-cta-desc {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.8;
+    max-width: 560px;
+    margin-bottom: 26px;
+  }
+
+  .aulas-cta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .aulas-cta-tag {
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: var(--purple);
+    background: var(--purple-light);
+    border: 0.5px solid var(--purple-mid);
+  }
+
+  .aulas-cta-box {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 16px 44px rgba(112,48,160,0.08);
+  }
+
+  .aulas-cta-box h3 {
+    font-family: 'Nova Square', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 14px;
+  }
+
+  .aulas-cta-box ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .aulas-cta-box li {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .aulas-cta-box li::before {
+    content: '•';
+    color: var(--purple);
+    margin-right: 8px;
+  }
+
   /* ── CONTATO ── */
   #contato {
     padding: 100px 80px;
@@ -616,6 +719,12 @@
     .photo-frame { width: 220px; height: 220px; }
     .photo-deco-ring { width: 244px; height: 244px; }
   }
+
+  @media (max-width: 900px) {
+    .aulas-cta-card { grid-template-columns: 1fr; padding: 32px 24px; }
+    #aulas-particulares-cta { padding: 70px 24px; }
+  }
+
 </style>
 </head>
 <body>
@@ -628,6 +737,7 @@
   <nav>
     <a href="#sobre">sobre</a>
     <a href="cursos.html#cursos">cursos</a>
+    <a href="aulas-particulares.html">aulas particulares</a>
     <a href="#contato">contato</a>
   </nav>
   <div class="socials">
@@ -722,6 +832,36 @@
     </div>
   </section>
 
+
+
+  <!-- AULAS PARTICULARES CTA -->
+  <section id="aulas-particulares-cta">
+    <div class="aulas-cta-card fade-up">
+      <div class="aulas-cta-content">
+        <p class="section-label">aulas particulares</p>
+        <h2 class="aulas-cta-title">Aprenda no seu ritmo,<br><span>com orientação individual.</span></h2>
+        <p class="aulas-cta-desc">Aulas personalizadas de Excel, Power Query, Power BI, Claude e Inteligência Artificial para resolver dúvidas reais, melhorar arquivos, construir dashboards e aplicar dados na rotina de trabalho.</p>
+        <div class="aulas-cta-tags">
+          <span class="aulas-cta-tag">Excel</span>
+          <span class="aulas-cta-tag">Power Query</span>
+          <span class="aulas-cta-tag">Power BI</span>
+          <span class="aulas-cta-tag">Claude</span>
+          <span class="aulas-cta-tag">I.A.</span>
+        </div>
+        <a href="aulas-particulares.html" class="btn btn-primary">ver aulas particulares →</a>
+      </div>
+      <div class="aulas-cta-box">
+        <h3>Formatos disponíveis</h3>
+        <ul>
+          <li>Aula avulsa de 1h para dúvidas pontuais.</li>
+          <li>Pacote com 5 aulas para acompanhamento em até 60 dias.</li>
+          <li>Pacote com 10 aulas para evolução completa em até 120 dias.</li>
+        </ul>
+        <a href="https://api.whatsapp.com/send?phone=5511984775286&text=Ol%C3%A1%2C%20J%C3%A9ssica%21%20Tenho%20interesse%20em%20uma%20aula%20particular.%20Gostaria%20de%20consultar%20disponibilidade%20e%20formas%20de%20pagamento." target="_blank" class="btn btn-outline">consultar formas de pagamento</a>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTATO -->
   <section id="contato">
     <div class="contato-inner">
@@ -730,7 +870,7 @@
         <h2 class="section-title">Vamos<br><span class="purple">conversar?</span></h2>
         <p class="contato-desc">Tem um projeto ou quer saber mais sobre os treinamentos? Me chama!</p>
         <div class="contato-options">
-          <a href="https://api.whatsapp.com/send?phone=5511981667470" target="_blank" class="contato-card">
+          <a href="https://api.whatsapp.com/send?phone=5511984775286" target="_blank" class="contato-card">
             <div class="contato-icon wa">
               <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </div>
@@ -739,13 +879,13 @@
               <div class="contato-card-value">Clique para conversar</div>
             </div>
           </a>
-          <a href="mailto:suporte@t2t.com.br" class="contato-card">
+          <a href="mailto:Jessicagleicianedasilva@gmail.com" class="contato-card">
             <div class="contato-icon em">
               <svg viewBox="0 0 24 24" fill="none" stroke="#7030A0" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             </div>
             <div>
               <div class="contato-card-label">E-mail</div>
-              <div class="contato-card-value">suporte@t2t.com.br</div>
+              <div class="contato-card-value">Jessicagleicianedasilva@gmail.com</div>
             </div>
           </a>
         </div>
@@ -756,7 +896,7 @@
           <a href="https://www.instagram.com/jgleiciane/" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon-btn">
             <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           </a>
-          <a href="https://api.whatsapp.com/send?phone=5511981667470" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon-btn">
+          <a href="https://api.whatsapp.com/send?phone=5511984775286" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon-btn">
             <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           </a>
         </div>
